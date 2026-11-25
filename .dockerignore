@@ -1,0 +1,6 @@
+.venv
+pretrained
+data
+resultados
+Dataset.tar.gz
+*.pdf

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+pretrained/
+*.tmp
+resultados/bd_*.csv
+Dataset.tar.gz
+*.pdf
