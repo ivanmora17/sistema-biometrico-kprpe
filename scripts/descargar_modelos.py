@@ -2,6 +2,7 @@
 
 Uso:  python scripts/descargar_modelos.py
 """
+import hashlib
 import sys
 import urllib.request
 from pathlib import Path
@@ -9,22 +10,40 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from huggingface_hub import hf_hub_download  # noqa: E402
 
-from sistema_biometrico.modelos import DIR_PESOS, REPO_KPRPE, REPO_DFA, YUNET_URL  # noqa: E402
+from sistema_biometrico.modelos import (DIR_PESOS, REPO_KPRPE, REPO_DFA, REVISION, SHA256,  # noqa: E402
+                                         YUNET_URL)
 
 PARCHE_ORIG = """try:
     from .rpe_ops.rpe_index import RPEIndexFunction
 except ImportError:"""
 
 
+def sha256(p: Path) -> str:
+    h = hashlib.sha256()
+    with open(p, "rb") as f:
+        for b in iter(lambda: f.read(1 << 20), b""):
+            h.update(b)
+    return h.hexdigest()
+
+
+def comprobar(p: Path, esperado: str):
+    real = sha256(p)
+    if real != esperado:
+        p.unlink()
+        sys.exit(f"ERROR: hash de {p} no coincide ({real} != {esperado}). Fichero borrado.")
+
+
 def descargar_repo(repo_id: str) -> Path:
     destino = DIR_PESOS / repo_id.split("/")[1]
     destino.mkdir(parents=True, exist_ok=True)
-    hf_hub_download(repo_id, "files.txt", local_dir=destino)
+    rev = REVISION[repo_id]
+    hf_hub_download(repo_id, "files.txt", local_dir=destino, revision=rev)
     ficheros = [f for f in (destino / "files.txt").read_text().split("\n") if f]
     for f in ficheros + ["config.json", "wrapper.py", "model.safetensors"]:
         if not (destino / f).exists():
             print("  descargando", repo_id, f)
-            hf_hub_download(repo_id, f, local_dir=destino)
+            hf_hub_download(repo_id, f, local_dir=destino, revision=rev)
+    comprobar(destino / "model.safetensors", SHA256[repo_id])
     return destino
 
 
@@ -53,4 +72,5 @@ if __name__ == "__main__":
         yunet.parent.mkdir(parents=True, exist_ok=True)
         print("  descargando YuNet")
         urllib.request.urlretrieve(YUNET_URL, yunet)
+    comprobar(yunet, SHA256["yunet"])
     print("OK")

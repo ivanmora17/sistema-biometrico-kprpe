@@ -1,6 +1,10 @@
+.git
 .venv
 pretrained
-data
 resultados
+secreto
+bd
+data/desconocidos
 Dataset.tar.gz
 *.pdf
+**/__pycache__

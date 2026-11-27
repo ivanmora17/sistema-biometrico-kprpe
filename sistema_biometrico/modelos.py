@@ -13,6 +13,7 @@ from __future__ import annotations
 import os
 import sys
 import contextlib
+import io
 from pathlib import Path
 
 import numpy as np
@@ -21,10 +22,30 @@ import torch
 RAIZ = Path(__file__).resolve().parent.parent
 DIR_PESOS = Path(os.environ.get("SB_PESOS", RAIZ / "pretrained"))
 
-REPO_KPRPE = "minchul/cvlface_adaface_vit_base_kprpe_webface4m"
+# Extractor: ViT-Base KPRPE de CVLFace. Dos versiones con la misma arquitectura, entrenadas con
+# WebFace4M o WebFace12M (por defecto; SB_KPRPE=webface4m para la otra).
+VARIANTES_KPRPE = {
+    "webface4m": ("minchul/cvlface_adaface_vit_base_kprpe_webface4m",
+                  "6530d73fb0af4d1d8287f31d559780c648ebd22a",
+                  "3c6d37ea874c2f38ffc9a7f0e9247efc994c3fb5c12d044759ac294e19d127f7"),
+    "webface12m": ("minchul/cvlface_adaface_vit_base_kprpe_webface12m",
+                   "daefd5012d369588bd214fbaf4cc6b1d286e7066",
+                   "99d16ed4aac0fdf0fcc82526b9b70703f3ec8c3041bf1bf44bd22751536e65db"),
+}
+VARIANTE = os.environ.get("SB_KPRPE", "webface12m")
+if VARIANTE not in VARIANTES_KPRPE:
+    raise ValueError(f"SB_KPRPE debe ser uno de {list(VARIANTES_KPRPE)}")
+REPO_KPRPE = VARIANTES_KPRPE[VARIANTE][0]
 REPO_DFA = "minchul/cvlface_DFA_mobilenet"
-YUNET_URL = ("https://github.com/opencv/opencv_zoo/raw/main/models/"
-             "face_detection_yunet/face_detection_yunet_2023mar.onnx")
+# Versiones fijadas (commit) y hash de los pesos: el build es reproducible y no se aceptan
+# pesos cambiados aguas arriba o manipulados.
+REVISION = {REPO_KPRPE: VARIANTES_KPRPE[VARIANTE][1],
+            REPO_DFA: "8317e6dda53d91e7074979923144c2cc08906a33"}
+SHA256 = {REPO_KPRPE: VARIANTES_KPRPE[VARIANTE][2],
+          REPO_DFA: "80b6e922e4c76c10d5e24061fe47cd96112d18689bf5ae7e34af52e641c18c4a",
+          "yunet": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"}
+YUNET_URL = ("https://github.com/opencv/opencv_zoo/raw/f12e12798e8314f7c074a6656816c048dcc95b7a/"
+             "models/face_detection_yunet/face_detection_yunet_2023mar.onnx")
 
 
 @contextlib.contextmanager
@@ -44,7 +65,9 @@ def _cargar_cvlface(path: Path):
     if not (path / "model.safetensors").exists():
         raise FileNotFoundError(
             f"No se encuentran los pesos en {path}. Ejecuta: python scripts/descargar_modelos.py")
-    with _en_carpeta(path):
+    # El codigo remoto de CVLFace imprime mensajes de carga por stdout: se descartan para que la
+    # salida de la CLI (p.ej. `main.py template`) sea solo el resultado. Los errores siguen saltando.
+    with _en_carpeta(path), contextlib.redirect_stdout(io.StringIO()):
         modelo = AutoModel.from_pretrained(str(path), trust_remote_code=True)
     return modelo.eval()
 
@@ -54,6 +77,7 @@ class Detector:
 
     def __init__(self, ruta_onnx: Path | None = None, umbral_score: float = 0.6):
         import cv2
+        cv2.utils.logging.setLogLevel(cv2.utils.logging.LOG_LEVEL_ERROR)
         self.cv2 = cv2
         ruta_onnx = Path(ruta_onnx or DIR_PESOS / "yunet" / "face_detection_yunet_2023mar.onnx")
         # Se carga desde buffer porque cv2 no abre rutas con caracteres no ASCII en Windows.
@@ -95,7 +119,7 @@ class Extractor:
     @staticmethod
     def a_tensor(rgb: np.ndarray) -> torch.Tensor:
         """uint8 HxWx3 RGB -> tensor 1x3xHxW normalizado a [-1, 1]."""
-        t = torch.from_numpy(np.ascontiguousarray(rgb)).permute(2, 0, 1).float() / 255.0
+        t = torch.from_numpy(np.require(rgb, requirements=["C", "W"])).permute(2, 0, 1).float() / 255.0
         return ((t - 0.5) / 0.5).unsqueeze(0)
 
     @torch.no_grad()

@@ -1,242 +1,392 @@
 {
   "impostores": {
     "n": 1225,
-    "media": 0.006786861922591925,
-    "max": 0.678081750869751,
-    "p99": 0.17842891812324524,
+    "media": 0.004343898501247168,
+    "max": 0.6424063444137573,
+    "p99": 0.13650411367416382,
     "FAR@umbral": 0.0008163265306122449
   },
   "robustez": {
     "original": {
-      "score_medio": 0.999999989271164,
+      "score_medio": 0.9999999964237213,
       "score_min": 0.9999998807907104,
       "TAR@umbral": 1.0,
-      "sin_cara": 0,
+      "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "espejo": {
-      "score_medio": 0.967546002715826,
-      "score_min": -0.0672391727566719,
+      "score_medio": 0.9896451916013446,
+      "score_min": 0.9692308902740479,
       "TAR@umbral": 0.98,
-      "sin_cara": 0,
+      "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "rotacion 15": {
-      "score_medio": 0.9895629811286927,
-      "score_min": 0.9703080058097839,
-      "TAR@umbral": 1.0,
-      "sin_cara": 0,
-      "rank1_identificacion": 1.0
+      "score_medio": 0.9712766117975116,
+      "score_min": -0.0029224399477243423,
+      "TAR@umbral": 0.98,
+      "sin_cara_valida": 0,
+      "rank1_identificacion": 0.98
     },
     "rotacion 30": {
-      "score_medio": 0.9614466761052608,
-      "score_min": -0.08664775639772415,
+      "score_medio": 0.985507452974514,
+      "score_min": 0.9381272792816162,
       "TAR@umbral": 0.98,
-      "sin_cara": 0,
+      "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "rotacion 90": {
-      "score_medio": 0.016500257700681687,
-      "score_min": -1.0,
-      "TAR@umbral": 0.44,
-      "sin_cara": 20,
-      "rank1_identificacion": 0.44
+      "score_medio": 0.9799335270002484,
+      "score_min": -0.00012490712106227875,
+      "TAR@umbral": 0.98,
+      "sin_cara_valida": 0,
+      "rank1_identificacion": 0.98
     },
     "baja res 200px": {
-      "score_medio": 0.9366071105003357,
-      "score_min": -1.0,
+      "score_medio": 0.976361768586295,
+      "score_min": 0.8653484582901001,
       "TAR@umbral": 0.98,
-      "sin_cara": 1,
+      "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "baja res 100px": {
-      "score_medio": 0.766522650718689,
-      "score_min": -1.0,
-      "TAR@umbral": 0.92,
-      "sin_cara": 3,
-      "rank1_identificacion": 0.92
+      "score_medio": 0.8865202188491821,
+      "score_min": 0.5311722755432129,
+      "TAR@umbral": 0.9,
+      "sin_cara_valida": 5,
+      "rank1_identificacion": 0.9
     },
     "desenfoque r=3": {
-      "score_medio": 0.9765423965454102,
-      "score_min": 0.890209436416626,
+      "score_medio": 0.9744423985481262,
+      "score_min": 0.8119574785232544,
       "TAR@umbral": 1.0,
-      "sin_cara": 0,
+      "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "oscura x0.4": {
-      "score_medio": 0.9913486444950104,
-      "score_min": 0.9711247682571411,
+      "score_medio": 0.9919351255893707,
+      "score_min": 0.9774478673934937,
       "TAR@umbral": 1.0,
-      "sin_cara": 0,
+      "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "sobreexpuesta x1.8": {
-      "score_medio": 0.898568254262209,
-      "score_min": -0.09172459691762924,
+      "score_medio": 0.9163972832718674,
+      "score_min": 0.6000727415084839,
       "TAR@umbral": 0.98,
-      "sin_cara": 0,
+      "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "escala de grises": {
-      "score_medio": 0.9439392280578613,
-      "score_min": 0.8730862140655518,
+      "score_medio": 0.9521275997161865,
+      "score_min": 0.8710919618606567,
       "TAR@umbral": 1.0,
-      "sin_cara": 0,
+      "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "JPEG q=10": {
-      "score_medio": 0.9116344358026981,
-      "score_min": -0.06810861080884933,
+      "score_medio": 0.9243598470882494,
+      "score_min": 0.8159889578819275,
       "TAR@umbral": 0.98,
-      "sin_cara": 0,
+      "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "ruido sigma=25": {
-      "score_medio": 0.957469435930252,
-      "score_min": 0.869955837726593,
+      "score_medio": 0.9539653718471527,
+      "score_min": 0.8300126791000366,
       "TAR@umbral": 1.0,
-      "sin_cara": 0,
+      "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "gafas de sol": {
-      "score_medio": 0.7396925188601017,
-      "score_min": -0.08510392159223557,
+      "score_medio": 0.7716244167211105,
+      "score_min": 0.5896225571632385,
       "TAR@umbral": 0.98,
-      "sin_cara": 0,
+      "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "mascarilla": {
-      "score_medio": 0.7485336972773076,
-      "score_min": -0.08510392159223557,
+      "score_medio": 0.7730990465806455,
+      "score_min": 0.612885057926178,
       "TAR@umbral": 0.98,
-      "sin_cara": 0,
+      "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     }
   },
-  "real": {
-    "genuinos": 5,
-    "impostores": 245,
-    "TAR@umbral": 1.0,
-    "FAR@umbral": 0.02040816326530612,
-    "EER": 0.00816326530612245,
-    "umbral_EER": 0.43900000000000006,
-    "rank1": 0.8
-  },
   "gemelas": {
-    "score": 0.678081750869751,
+    "score": 0.6424064636230469,
     "supera_umbral": true,
     "pares_impostores_mas_altos": 0,
     "pruebas": [
       {
         "real": "paula_etxeberria_(twin_melody)",
+        "foto": "paula_etxeberria_(twin_melody)_2023.jpg",
+        "score_propia": 0.6535122394561768,
+        "score_hermana": 0.6424064636230469,
+        "aceptada_propia": false,
+        "aceptada_hermana_antes": true,
+        "aceptada_hermana": false,
+        "identificada_como": null
+      },
+      {
+        "real": "paula_etxeberria_(twin_melody)",
         "foto": "neo2_1_izda.jpg",
-        "score_propia": 0.4678089916706085,
-        "score_hermana": 0.43832728266716003,
+        "score_propia": 0.5987145900726318,
+        "score_hermana": 0.5546075105667114,
+        "aceptada_propia": true,
+        "aceptada_hermana_antes": true,
+        "aceptada_hermana": false,
         "identificada_como": "paula_etxeberria_(twin_melody)"
       },
       {
         "real": "paula_etxeberria_(twin_melody)",
         "foto": "neo2_2_izda.jpg",
-        "score_propia": 0.7102348208427429,
-        "score_hermana": 0.6546106338500977,
+        "score_propia": 0.6535123586654663,
+        "score_hermana": 0.5661094784736633,
+        "aceptada_propia": true,
+        "aceptada_hermana_antes": true,
+        "aceptada_hermana": false,
         "identificada_como": "paula_etxeberria_(twin_melody)"
       },
       {
         "real": "aitana_etxebarria_(twin_melody)",
+        "foto": "aitana_etxebarria_(twin_melody)_2024.jpg",
+        "score_propia": 0.6753145456314087,
+        "score_hermana": 0.6424065232276917,
+        "aceptada_propia": true,
+        "aceptada_hermana_antes": true,
+        "aceptada_hermana": false,
+        "identificada_como": "aitana_etxebarria_(twin_melody)"
+      },
+      {
+        "real": "aitana_etxebarria_(twin_melody)",
         "foto": "formulatv.jpg",
-        "score_propia": 0.7265939116477966,
-        "score_hermana": 0.6459123492240906,
+        "score_propia": 0.6994227170944214,
+        "score_hermana": 0.5925278067588806,
+        "aceptada_propia": true,
+        "aceptada_hermana_antes": true,
+        "aceptada_hermana": false,
         "identificada_como": "aitana_etxebarria_(twin_melody)"
       },
       {
         "real": "aitana_etxebarria_(twin_melody)",
         "foto": "neo2_1_dcha.jpg",
-        "score_propia": 0.49866217374801636,
-        "score_hermana": 0.5426585674285889,
-        "identificada_como": "paula_etxeberria_(twin_melody)"
+        "score_propia": 0.6452301740646362,
+        "score_hermana": 0.5546073913574219,
+        "aceptada_propia": true,
+        "aceptada_hermana_antes": true,
+        "aceptada_hermana": false,
+        "identificada_como": "aitana_etxebarria_(twin_melody)"
       },
       {
         "real": "aitana_etxebarria_(twin_melody)",
         "foto": "neo2_2_dcha.jpg",
-        "score_propia": 0.6409225463867188,
-        "score_hermana": 0.6003956198692322,
+        "score_propia": 0.6994227170944214,
+        "score_hermana": 0.5615872144699097,
+        "aceptada_propia": true,
+        "aceptada_hermana_antes": true,
+        "aceptada_hermana": false,
         "identificada_como": "aitana_etxebarria_(twin_melody)"
       }
     ],
-    "FAR_gemelas": 1.0
+    "FAR_gemelas_antes": 1.0,
+    "FAR_gemelas": 0.0,
+    "FRR_gemelas": 0.1428571428571429,
+    "identificacion_correcta": 0.8571428571428571
   },
   "ataques": {
     "sd_no_caras": {
       "ruido uniforme": {
-        "con_detector": null,
-        "sd_id": null,
-        "sd_score": 0.08961918205022812
+        "con_detector": [
+          null,
+          null
+        ],
+        "sd": [
+          null,
+          null
+        ]
       },
       "gris liso": {
-        "con_detector": null,
-        "sd_id": null,
-        "sd_score": 0.08474650979042053
+        "con_detector": [
+          null,
+          null
+        ],
+        "sd": [
+          null,
+          null
+        ]
       },
       "negro": {
-        "con_detector": null,
-        "sd_id": null,
-        "sd_score": 0.0843382477760315
+        "con_detector": [
+          null,
+          null
+        ],
+        "sd": [
+          null,
+          null
+        ]
       },
       "degradado": {
-        "con_detector": null,
-        "sd_id": null,
-        "sd_score": 0.12022652477025986
+        "con_detector": [
+          null,
+          null
+        ],
+        "sd": [
+          null,
+          null
+        ]
       }
     },
-    "sd_fotos_completas_rank1": 0.48,
-    "replay": {
-      "verificaciones_aceptadas": 50,
-      "identificaciones": 50,
+    "sd_fotos_completas": {
+      "correctas": 18,
+      "rechazadas_calidad": 27,
       "n": 50
     },
-    "hill_climbing": [
-      {
-        "victima": "adam_pearson",
-        "consultas": 256,
-        "score_final": 0.4009692072868347,
-        "aceptado": true
-      },
-      {
-        "victima": "adele",
-        "consultas": 270,
-        "score_final": 0.4018336832523346,
-        "aceptado": true
-      },
-      {
-        "victima": "aitana_etxebarria_(twin_melody)",
-        "consultas": 301,
-        "score_final": 0.40283122658729553,
-        "aceptado": true
-      },
-      {
-        "victima": "anya_taylor_joy",
-        "consultas": 229,
-        "score_final": 0.40084242820739746,
-        "aceptado": true
-      },
-      {
-        "victima": "arianna_grande",
-        "consultas": 316,
-        "score_final": 0.40372252464294434,
-        "aceptado": true
-      }
-    ],
+    "replay": {
+      "verificaciones_aceptadas": 0,
+      "identificaciones": 0,
+      "n": 55
+    },
+    "hill_climbing": {
+      "score_exacto": [
+        {
+          "victima": "adam_pearson",
+          "aceptado": true,
+          "consultas": 254
+        },
+        {
+          "victima": "adele",
+          "aceptado": true,
+          "consultas": 272
+        },
+        {
+          "victima": "aitana_etxebarria_(twin_melody)",
+          "aceptado": true,
+          "consultas": 276
+        },
+        {
+          "victima": "anya_taylor_joy",
+          "aceptado": true,
+          "consultas": 264
+        },
+        {
+          "victima": "arianna_grande",
+          "aceptado": true,
+          "consultas": 233
+        }
+      ],
+      "score_cuantizado": [
+        {
+          "victima": "adam_pearson",
+          "aceptado": false,
+          "consultas": 5000
+        },
+        {
+          "victima": "adele",
+          "aceptado": false,
+          "consultas": 5000
+        },
+        {
+          "victima": "aitana_etxebarria_(twin_melody)",
+          "aceptado": false,
+          "consultas": 5000
+        },
+        {
+          "victima": "anya_taylor_joy",
+          "aceptado": false,
+          "consultas": 5000
+        },
+        {
+          "victima": "arianna_grande",
+          "aceptado": false,
+          "consultas": 5000
+        }
+      ],
+      "con_bloqueo": [
+        {
+          "victima": "adam_pearson",
+          "aceptado": false,
+          "consultas": 200
+        },
+        {
+          "victima": "adele",
+          "aceptado": false,
+          "consultas": 200
+        },
+        {
+          "victima": "aitana_etxebarria_(twin_melody)",
+          "aceptado": false,
+          "consultas": 200
+        },
+        {
+          "victima": "anya_taylor_joy",
+          "aceptado": false,
+          "consultas": 200
+        },
+        {
+          "victima": "arianna_grande",
+          "aceptado": false,
+          "consultas": 200
+        }
+      ]
+    },
     "maestro": {
-      "aceptado_por": 0,
-      "score_max": 0.33131539821624756
+      "aceptado_por": 7,
+      "score_max": 0.5215809941291809
     },
-    "escritura_hmac_False": {
-      "atacante_aceptado": true,
-      "filas_rechazadas": 0
+    "escritura": {
+      "anadir fila cifrada con otra clave": "rechazada: linea 57 (id='adam_pearson'): no descifra (cambiada, de otro id o sin la clave)",
+      "copiar fila firmada de otro con el id de la victima": "rechazada: linea 57 (id='adam_pearson'): no descifra (cambiada, de otro id o sin la clave)",
+      "sustituir la fila de la victima": "rechazada: linea 2 (id='adam_pearson'): no descifra (cambiada, de otro id o sin la clave)",
+      "borrar una fila (DoS)": "rechazada: se han borrado, duplicado o reordenado filas, o falta bd_ataque.csv.sello",
+      "restaurar copia antigua completa (rollback)": "rechazada: alguien ha restaurado una BD anterior (rollback)"
     },
-    "escritura_hmac_True": {
-      "atacante_aceptado": false,
-      "filas_rechazadas": 1
+    "enumeracion": {
+      "id_inexistente": [
+        false,
+        0.0
+      ],
+      "id_existente_impostor": [
+        false,
+        0.0
+      ]
+    },
+    "bloqueo": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "varias_caras": {
+      "commons_2018.jpg": [
+        null,
+        null
+      ],
+      "commons_2023.jpg": [
+        null,
+        null
+      ],
+      "neo2_1.jpg": [
+        null,
+        null
+      ],
+      "neo2_2.jpg": [
+        null,
+        null
+      ]
+    },
+    "inscripcion": {
+      "inscribir la cara de una victima con un id nuevo (1 foto)": "rechazado: ValueError: Esa cara se parece mucho a una persona ya inscrita (gemelo o doble): para inscribirla hacen falta al menos 3 fotos distintas suyas",
+      "inscribirse con 3 fotos de keanu_reeves (espejo, desenfoque, JPEG) con un id nuevo": "rechazado: ValueError: Esa cara no se distingue de una persona ya inscrita ni con estas fotos: aporta fotos mas claras o mas variadas",
+      "inscribir con 3 fotos de personas distintas": "rechazado: ValueError: Las fotos de la inscripcion no parecen de la misma persona",
+      "reemplazar la identidad de la victima sin clave de admin": "rechazado: PermissionError: Modificar una identidad inscrita (reemplazar o anadir fotos) requiere la clave de administrador (define SB_CLAVE_ADMIN y pasa clave_admin / --admin)",
+      "anadir una foto propia a la identidad de la victima sin clave de admin": "rechazado: PermissionError: Modificar una identidad inscrita (reemplazar o anadir fotos) requiere la clave de administrador (define SB_CLAVE_ADMIN y pasa clave_admin / --admin)"
+    },
+    "inscripcion_gemela": {
+      "con 1 foto": "rechazada: Esa cara se parece mucho a una persona ya inscrita (gemelo o doble): para inscribirla hacen falta al menos 3 fotos distintas suyas",
+      "con sus 3 fotos": "inscrita"
     }
   }
 }

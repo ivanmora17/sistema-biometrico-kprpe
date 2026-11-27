@@ -2,6 +2,9 @@
 __pycache__/
 pretrained/
 *.tmp
-resultados/bd_*.csv
 Dataset.tar.gz
 *.pdf
+# Clave del sistema y BD generada con ella: nunca al repositorio
+secreto/
+bd/
+resultados/bd_*
