@@ -10,7 +10,7 @@ Formato (una fila por inscripcion):
   clave o movida a otro id.
 * `<bd>.sello` = version + HMAC(version, CSV completo). Detecta filas BORRADAS o duplicadas.
 * La ultima version vista se guarda fuera de bd/ (`secreto/version_<bd>`, firmada): restaurar una
-  copia antigua completa (CSV + sello) se detecta (rollback).
+  copia antigua completa (CSV + sello) o borrar la BD se detecta.
 
 Si la firma de alguna fila o el sello no cuadran, la BD NO se carga (ErrorIntegridad): el
 sistema falla cerrado en vez de funcionar con una BD manipulada.
@@ -68,6 +68,11 @@ class BaseDatos:
         self.templates = np.zeros((0, DIM), dtype=np.float32)
         if self.ruta.exists():
             self.cargar()
+        elif self._version_vista() > 0:
+            # Ya hubo una BD aqui: si ha desaparecido, alguien la ha borrado (p.ej. para vaciarla y
+            # volver a inscribir el id de otra persona con su propia cara).
+            raise ErrorIntegridad(f"{self.ruta} ha desaparecido (version {self._version_vista()} vista): "
+                                  f"alguien ha borrado la BD")
 
     # ------------------------------------------------------------------ E/S
     def cargar(self):
@@ -148,11 +153,12 @@ class BaseDatos:
     def identidades(self) -> list[str]:
         return sorted(set(self.ids))
 
-    def anadir(self, id_: str, t: np.ndarray, reemplazar: bool = False):
+    def anadir(self, id_: str, ts: list[np.ndarray], reemplazar: bool = False):
+        """Anade uno o varios templates de `id_` (y opcionalmente quita los anteriores) en una sola escritura."""
         if reemplazar:
             self.eliminar(id_)
-        self.ids.append(id_)
-        self.templates = np.vstack([self.templates, t[None, :]])
+        self.ids += [id_] * len(ts)
+        self.templates = np.vstack([self.templates, *[t[None, :] for t in ts]])
         self.guardar()
 
     def eliminar(self, id_: str):

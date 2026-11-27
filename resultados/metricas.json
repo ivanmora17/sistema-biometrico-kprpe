@@ -2,111 +2,111 @@
   "impostores": {
     "n": 1225,
     "media": 0.004343898501247168,
-    "max": 0.6424063444137573,
-    "p99": 0.13650411367416382,
+    "max": 0.6424062252044678,
+    "p99": 0.13650408387184143,
     "FAR@umbral": 0.0008163265306122449
   },
   "robustez": {
     "original": {
-      "score_medio": 0.9999999964237213,
+      "score_medio": 0.9999999916553497,
       "score_min": 0.9999998807907104,
       "TAR@umbral": 1.0,
       "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "espejo": {
-      "score_medio": 0.9896451916013446,
-      "score_min": 0.9692308902740479,
+      "score_medio": 0.989645181869974,
+      "score_min": 0.9692307710647583,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "rotacion 15": {
-      "score_medio": 0.9712766117975116,
-      "score_min": -0.0029224399477243423,
+      "score_medio": 0.9712766142375767,
+      "score_min": -0.0029224371537566185,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 0,
       "rank1_identificacion": 0.98
     },
     "rotacion 30": {
-      "score_medio": 0.985507452974514,
-      "score_min": 0.9381272792816162,
+      "score_medio": 0.985507463922306,
+      "score_min": 0.9381271600723267,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "rotacion 90": {
-      "score_medio": 0.9799335270002484,
-      "score_min": -0.00012490712106227875,
+      "score_medio": 0.9799335210770369,
+      "score_min": -0.00012490525841712952,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 0,
       "rank1_identificacion": 0.98
     },
     "baja res 200px": {
-      "score_medio": 0.976361768586295,
+      "score_medio": 0.9763617576385031,
       "score_min": 0.8653484582901001,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "baja res 100px": {
-      "score_medio": 0.8865202188491821,
+      "score_medio": 0.8865202135509915,
       "score_min": 0.5311722755432129,
       "TAR@umbral": 0.9,
       "sin_cara_valida": 5,
       "rank1_identificacion": 0.9
     },
     "desenfoque r=3": {
-      "score_medio": 0.9744423985481262,
+      "score_medio": 0.9744423925876617,
       "score_min": 0.8119574785232544,
       "TAR@umbral": 1.0,
       "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "oscura x0.4": {
-      "score_medio": 0.9919351255893707,
+      "score_medio": 0.991935123205185,
       "score_min": 0.9774478673934937,
       "TAR@umbral": 1.0,
       "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "sobreexpuesta x1.8": {
-      "score_medio": 0.9163972832718674,
-      "score_min": 0.6000727415084839,
+      "score_medio": 0.9163972820554461,
+      "score_min": 0.6000726819038391,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "escala de grises": {
-      "score_medio": 0.9521275997161865,
+      "score_medio": 0.952127594947815,
       "score_min": 0.8710919618606567,
       "TAR@umbral": 1.0,
       "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "JPEG q=10": {
-      "score_medio": 0.9243598470882494,
-      "score_min": 0.8159889578819275,
+      "score_medio": 0.9243598300583509,
+      "score_min": 0.8159888982772827,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "ruido sigma=25": {
-      "score_medio": 0.9539653718471527,
+      "score_medio": 0.9539653611183166,
       "score_min": 0.8300126791000366,
       "TAR@umbral": 1.0,
       "sin_cara_valida": 0,
       "rank1_identificacion": 1.0
     },
     "gafas de sol": {
-      "score_medio": 0.7716244167211105,
-      "score_min": 0.5896225571632385,
+      "score_medio": 0.7716244118554252,
+      "score_min": 0.5896226167678833,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 1,
       "rank1_identificacion": 0.98
     },
     "mascarilla": {
-      "score_medio": 0.7730990465806455,
+      "score_medio": 0.7730990453642241,
       "score_min": 0.612885057926178,
       "TAR@umbral": 0.98,
       "sin_cara_valida": 1,
@@ -121,8 +121,8 @@
       {
         "real": "paula_etxeberria_(twin_melody)",
         "foto": "paula_etxeberria_(twin_melody)_2023.jpg",
-        "score_propia": 0.6535122394561768,
-        "score_hermana": 0.6424064636230469,
+        "score_propia": 0.6535122990608215,
+        "score_hermana": 0.6424064040184021,
         "aceptada_propia": false,
         "aceptada_hermana_antes": true,
         "aceptada_hermana": false,
@@ -141,7 +141,7 @@
       {
         "real": "paula_etxeberria_(twin_melody)",
         "foto": "neo2_2_izda.jpg",
-        "score_propia": 0.6535123586654663,
+        "score_propia": 0.6535122990608215,
         "score_hermana": 0.5661094784736633,
         "aceptada_propia": true,
         "aceptada_hermana_antes": true,
@@ -151,8 +151,8 @@
       {
         "real": "aitana_etxebarria_(twin_melody)",
         "foto": "aitana_etxebarria_(twin_melody)_2024.jpg",
-        "score_propia": 0.6753145456314087,
-        "score_hermana": 0.6424065232276917,
+        "score_propia": 0.6753144860267639,
+        "score_hermana": 0.6424063444137573,
         "aceptada_propia": true,
         "aceptada_hermana_antes": true,
         "aceptada_hermana": false,
@@ -162,7 +162,7 @@
         "real": "aitana_etxebarria_(twin_melody)",
         "foto": "formulatv.jpg",
         "score_propia": 0.6994227170944214,
-        "score_hermana": 0.5925278067588806,
+        "score_hermana": 0.5925278663635254,
         "aceptada_propia": true,
         "aceptada_hermana_antes": true,
         "aceptada_hermana": false,
@@ -171,8 +171,8 @@
       {
         "real": "aitana_etxebarria_(twin_melody)",
         "foto": "neo2_1_dcha.jpg",
-        "score_propia": 0.6452301740646362,
-        "score_hermana": 0.5546073913574219,
+        "score_propia": 0.6452301144599915,
+        "score_hermana": 0.5546075105667114,
         "aceptada_propia": true,
         "aceptada_hermana_antes": true,
         "aceptada_hermana": false,
@@ -339,7 +339,8 @@
       "copiar fila firmada de otro con el id de la victima": "rechazada: linea 57 (id='adam_pearson'): no descifra (cambiada, de otro id o sin la clave)",
       "sustituir la fila de la victima": "rechazada: linea 2 (id='adam_pearson'): no descifra (cambiada, de otro id o sin la clave)",
       "borrar una fila (DoS)": "rechazada: se han borrado, duplicado o reordenado filas, o falta bd_ataque.csv.sello",
-      "restaurar copia antigua completa (rollback)": "rechazada: alguien ha restaurado una BD anterior (rollback)"
+      "restaurar copia antigua completa (rollback)": "rechazada: alguien ha restaurado una BD anterior (rollback)",
+      "borrar la BD entera (CSV + sello)": "rechazada: alguien ha borrado la BD"
     },
     "enumeracion": {
       "id_inexistente": [

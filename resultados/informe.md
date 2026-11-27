@@ -114,6 +114,7 @@ Cada fila va cifrada con AES-256-GCM (el id como dato asociado) y la BD lleva un
 - sustituir la fila de la victima: **rechazada: linea 2 (id='adam_pearson'): no descifra (cambiada, de otro id o sin la clave)**
 - borrar una fila (DoS): **rechazada: se han borrado, duplicado o reordenado filas, o falta bd_ataque.csv.sello**
 - restaurar una copia antigua completa, CSV + sello (rollback): **rechazada: alguien ha restaurado una BD anterior (rollback)**
+- borrar la BD entera, CSV + sello, para reinscribir a la victima: **rechazada: alguien ha borrado la BD**
 
 El sistema falla cerrado: con la BD manipulada no arranca. Borrar filas sigue siendo una denegacion de servicio, pero ya no pasa desapercibido.
 

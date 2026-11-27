@@ -1,4 +1,4 @@
-"""Sistema de reconocimiento facial: CVLFace ViT-Base KPRPE (AdaFace, WebFace4M).
+"""Sistema de reconocimiento facial: CVLFace ViT-Base KPRPE (AdaFace, WebFace12M por defecto).
 
 Metodos pedidos en el enunciado:
 
@@ -329,10 +329,7 @@ class SistemaBiometrico:
             if parecido:
                 warnings.warn("Inscrita una cara muy parecida a otra persona ya inscrita. Conviene que esa "
                               "persona tenga tambien varias fotos (inscribir con anadir=True).")
-        if reemplazar:
-            self.bd.eliminar(id)
-        for t in ts:
-            self.bd.anadir(id, self._transf.aplicar(t))
+        self.bd.anadir(id, [self._transf.aplicar(t) for t in ts], reemplazar=reemplazar)
 
     def verificar_t(self, id, template):
         t = validar_template(template)

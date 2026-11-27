@@ -2,7 +2,7 @@
 
     foto --(1) YuNet (detector)--> recorte cuadrado de la cara
          --(2) CVLFace DFA MobileNet (alineador, 5 landmarks)--> cara alineada 112x112 + keypoints
-         --(3) CVLFace ViT-Base KPRPE (AdaFace, WebFace4M)--> template de 512 floats (L2-normalizado)
+         --(3) CVLFace ViT-Base KPRPE (AdaFace, WebFace12M)--> template de 512 floats (L2-normalizado)
 
 Los modelos de CVLFace se distribuyen como "remote code" de HuggingFace. Ambos repos traen
 paquetes Python de primer nivel (`models`, `aligners`) y rutas relativas (`pretrained_model/...`),

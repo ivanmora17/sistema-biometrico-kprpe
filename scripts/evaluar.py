@@ -487,7 +487,15 @@ def main():
         r = f"rechazada: {str(e).split(':', 1)[1].strip()[:90]}"
     A["escritura"]["restaurar copia antigua completa (rollback)"] = r
     p(f"- restaurar una copia antigua completa, CSV + sello (rollback): **{r}**")
+    # borrar la BD entera para empezar vacia y volver a inscribir el id de la victima con otra cara
     borrar_bd(bd_rb)
+    try:
+        _BD(bd_rb, s._kh, s._kc, ruta_version=ver_rb)
+        r = "ARRANCA VACIA (fallo)"
+    except ErrorIntegridad as e:
+        r = f"rechazada: {str(e).split(':', 1)[1].strip()[:90]}"
+    A["escritura"]["borrar la BD entera (CSV + sello)"] = r
+    p(f"- borrar la BD entera, CSV + sello, para reinscribir a la victima: **{r}**")
     ver_rb.unlink(missing_ok=True)
     p("\nEl sistema falla cerrado: con la BD manipulada no arranca. Borrar filas sigue siendo una "
       "denegacion de servicio, pero ya no pasa desapercibido.")
